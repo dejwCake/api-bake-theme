@@ -19,7 +19,7 @@ class ApiModelTask extends ModelTask
     {
         $behaviors = parent::getBehaviors($model);
 
-        $schema = $model->schema();
+        $schema = $model->getSchema();
         $fields = $schema->columns();
         if (in_array('deleted', $fields)) {
             $behaviors['Muffin/Trash.Trash'] = [];
